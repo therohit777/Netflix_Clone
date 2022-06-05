@@ -27,3 +27,8 @@
 .row_large:hover{
     transform: scale(1.09);
 }
+.videodisplay{
+    width: 98%;
+    height: 390px;
+    object-fit:contain ;
+}

@@ -1,7 +1,7 @@
 import React, { useState , useEffect } from 'react'
 import axios from "./axios";
 import "../Css/row.css";
-import YouTube from "react-youtube";
+
 
 
 
@@ -22,13 +22,7 @@ function Row({title,fetchUrl,isLargeRow}) {
     fetchData()
   }, [fetchUrl])
 
-  const opts = {
-    height: "390",
-    width: "100%",
-    playerVars: {
-    autoplay: 1,
-    }
-  }
+ 
 
   const clickopt=(movie)=>{
     if (trailerUrl) {
@@ -60,7 +54,8 @@ function Row({title,fetchUrl,isLargeRow}) {
             ))}
         </div>
     
-        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+        {trailerUrl && <iframe src={`https://www.youtube.com/embed/${trailerUrl}?autoplay=1`} allow="autoplay" title='vid' className="videodisplay"/>}
+        
     </div>
 
   )
